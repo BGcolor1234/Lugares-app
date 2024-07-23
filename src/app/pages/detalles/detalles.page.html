@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="centered">
+      {{ lugar.nombre }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openComentarioModal()">
+        <ion-icon name="chatbubbles" class="xd"></ion-icon>
+      </ion-button>
+      <ion-button (click)="presentAlert()">
+        <ion-icon name="trash" class="red-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img [src]="lugar.enlace"></ion-img>
+  <br>
+
+  <ion-item-divider class="divo">
+    <ion-title class="centered">
+      {{ lugar.nombre }}
+    </ion-title>
+  </ion-item-divider>
+
+  <br>
+
+  <ion-item-divider>
+    <ion-label>Descripcion</ion-label>
+  </ion-item-divider>
+
+  <p>{{ lugar.descripcion }}</p>
+
+  <ion-item-divider>
+    <ion-label>Comentario</ion-label>
+  </ion-item-divider>
+  <p>{{ lugar.comentario }}</p>
+
+  <ion-button class="fixed-icon-button" id="open-custom-dialog" (click)="openEditarModal()">
+    <ion-icon slot="icon-only" name="create" style="font-size: 70px;"></ion-icon>
+  </ion-button>
+</ion-content>
